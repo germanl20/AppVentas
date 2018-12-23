@@ -22,7 +22,7 @@
                   <Insets />
                </HBox.margin>
                <graphic>
-                  <FontAwesomeIconView fill="#f44336" glyphName="LIST_UL" size="1.8em" text="" wrappingWidth="26.600000381469727" />
+                  <FontAwesomeIconView fill="#2196f3" glyphName="LIST_UL" size="1.8em" text="" wrappingWidth="26.600000381469727" />
                </graphic>
             </JFXButton>
          </children>
@@ -40,7 +40,7 @@
                   <Insets />
                </HBox.margin>
                <graphic>
-                  <MaterialIconView fill="#f44336" glyphName="LOCAL_LIBRARY" size="2em" wrappingWidth="27.0" />
+                  <MaterialIconView fill="#2196f3" glyphName="LOCAL_LIBRARY" size="2em" wrappingWidth="27.0" />
                </graphic>
             </JFXButton>
          </children>
@@ -58,7 +58,7 @@
                   <Insets />
                </HBox.margin>
                <graphic>
-                  <Icons525View fill="#f44336" glyphName="SQUARE_CALC" size="1.8em" wrappingWidth="25.600000381469727" />
+                  <Icons525View fill="#2196f3" glyphName="SQUARE_CALC" size="1.8em" wrappingWidth="25.600000381469727" />
                </graphic>
             </JFXButton>
          </children>
@@ -76,7 +76,7 @@
                   <Insets />
                </HBox.margin>
                <graphic>
-                  <MaterialDesignIconView fill="#f44336" glyphName="TAG_FACES" size="1.8em" wrappingWidth="25.600000381469727" />
+                  <MaterialDesignIconView fill="#2196f3" glyphName="TAG_FACES" size="1.8em" wrappingWidth="25.600000381469727" />
                </graphic>
             </JFXButton>
          </children>
@@ -90,7 +90,7 @@
                <children>
                   <JFXButton alignment="BASELINE_LEFT" prefHeight="42.0" prefWidth="201.0" ripplerFill="#a4a4a4" text="CONFIGURACION" textFill="#485460" HBox.hgrow="ALWAYS">
                      <graphic>
-                        <FontAwesomeIconView fill="#f44336" glyphName="COG" size="1.8em" wrappingWidth="24.514286041259766" />
+                        <FontAwesomeIconView fill="#2196f3" glyphName="COG" size="1.8em" wrappingWidth="24.514286041259766" />
                      </graphic>
                      <font>
                         <Font name="Quicksand-Bold" size="14.0" />

@@ -23,7 +23,7 @@ public class Main extends Application {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("Ventas(cambiar)");
 		mostrarInterfazPrincipal();
-		mostrarSeccionCentro();
+		cargarSeccionCentro("/seccionVentas/InterfazVentas.fxml");
 	}
 	
 	private void mostrarInterfazPrincipal() {
@@ -41,10 +41,10 @@ public class Main extends Application {
 		}
 	}
 	
-	public void mostrarSeccionCentro() {
+	public void cargarSeccionCentro(String direccionInterfaz) {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-	        loader.setLocation(Main.class.getResource("/seccionVentas/InterfazVentas.fxml"));
+	        loader.setLocation(Main.class.getResource(direccionInterfaz));
 			BorderPane seccionVentas = (BorderPane) loader.load();
 			rootLayout.setCenter(seccionVentas);
 		} catch (IOException e) {

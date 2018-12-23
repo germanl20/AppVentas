@@ -1,9 +1,16 @@
 .tree-table-view .placeholder .label {  
     -fx-font-size: 1.1em;  
     -fx-font-weight: bold;    
-    -fx-text-fill: #F44336;
+    -fx-text-fill: #1976D2;
     -fx-alignment: center;
-} 
+}
+
+#barraDeBusqueda{
+	-fx-background-color: #eaeaea;
+	-fx-prompt-text-fill: #727272;
+	-fx-background-radius: 7px;
+	-fx-text-fill: #616161
+}
 
 .tree-table-view {  
         -fx-background-color: #fff;
@@ -27,11 +34,11 @@
 
 .tree-table-view .column-header-background {  
       -fx-background-radius: 5.0 5.0 0.0 0.0;  
-      -fx-background-color: #EF5350;
+      -fx-background-color: #1976D2;
 }
 
 .tree-table-view .column-resize-line{
-    -fx-background-color: #EF5350;
+    -fx-background-color: #1976D2;
 }
 
 .segunda-seccion{
@@ -40,4 +47,23 @@
 
 #jfx-text-field{
 	-fx-prompt-text-fill: #9E9E9E;
+}
+
+.boton-eliminar{
+	-fx-background-color: white;
+	-fx-border-width: 1px;
+	-fx-border-color:  #d7d7d7;
+	-fx-border-radius: 3px;
+	-fx-text-fill: #1976d2;
+}
+
+.boton-eliminar:hover{
+	-fx-border-width: 0;
+	-fx-background-color: #1976D2;
+	-fx-text-fill: white;
+}
+
+.hbox-barra-herramientas{
+	-fx-border-width: 0px 0px 1px 0px;
+	-fx-border-color: #eaeaea;
 }
