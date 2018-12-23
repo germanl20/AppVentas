@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
+	<classpathentry kind="lib" path="librerias/jfoenix-8.0.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC/eclipse-workspace/AplicacionDeVentas/librerias/fontawesomefx-controls-8.15.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC/eclipse-workspace/AplicacionDeVentas/librerias/fontawesomefx-emojione-2.2.7-2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC/eclipse-workspace/AplicacionDeVentas/librerias/fontawesomefx-fontawesome-4.7.0-5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC/eclipse-workspace/AplicacionDeVentas/librerias/fontawesomefx-glyphsbrowser-1.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC/eclipse-workspace/AplicacionDeVentas/librerias/fontawesomefx-icons525-3.0.0-4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC/eclipse-workspace/AplicacionDeVentas/librerias/fontawesomefx-materialdesignfont-1.7.22-4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC/eclipse-workspace/AplicacionDeVentas/librerias/fontawesomefx-materialicons-2.2.0-5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC/eclipse-workspace/AplicacionDeVentas/librerias/fontawesomefx-octicons-4.3.0-5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC/eclipse-workspace/AplicacionDeVentas/librerias/fontawesomefx-weathericons-2.0.10-5.jar"/>
+	<classpathentry kind="lib" path="librerias/fontawesomefx-commons-8.15.jar"/>
+	<classpathentry kind="lib" path="librerias/AnimateFX-1.2.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="700.0" prefWidth="1300.0" stylesheets="@estilo.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfazPrincipal.ControladorInterfazPrincipal">
+   <top>
+      <HBox prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f44336;">
+               <children>
+                  <JFXHamburger fx:id="hamburger" prefHeight="40.0" prefWidth="30.0">
+                     <HBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXHamburger>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: QuickSand; -fx-font-weight: bold; -fx-font-size: 1.4em;" text="Bienvenido" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: white;" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="940.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <JFXTextField id="barraDeBusqueda" focusColor="#ffffff00" prefHeight="34.0" prefWidth="451.0" promptText="Buscar venta..." unFocusColor="#ffffff00">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="15.0" right="35.0" />
+                           </padding>
+                           <font>
+                              <Font name="Quicksand-BoldItalic" size="12.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="32.0" prefWidth="24.0" ripplerFill="#f4433600">
+                           <graphic>
+                              <MaterialIconView fill="#727272" glyphName="SEARCH" size="2em">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </MaterialIconView>
+                           </graphic>
+                           <HBox.margin>
+                              <Insets left="-35.0" />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                        </JFXButton>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="106.0">
+                     <children>
+                        <JFXButton id="jfx-button-bar" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" prefHeight="60.0" prefWidth="49.0" ripplerFill="#a4a4a4">
+                           <graphic>
+                              <FontAwesomeIconView fill="#727272" glyphName="COG" size="2em" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </JFXButton>
+                     </children>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="7.0" top="7.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="60.0" prefWidth="155.0">
+                     <children>
+                        <MaterialDesignIconView fill="#727272" glyphName="ACCOUNT" size="2em" />
+                        <Text fill="#f44336" strokeType="OUTSIDE" strokeWidth="0.0" text="Alfa y Omega" textAlignment="CENTER">
+                           <font>
+                              <Font name="Quicksand-Bold" size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                     <HBox.margin>
+                        <Insets right="15.0" />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <effect>
+            <DropShadow color="#a4a4a4" height="11.18" radius="2.295" width="0.0" />
+         </effect>
+      </HBox>
+   </top>
+   <left>
+      <JFXDrawer fx:id="drawer" alignment="TOP_LEFT" defaultDrawerSize="200.0" nodeOrientation="LEFT_TO_RIGHT" overLayVisible="false" prefHeight="650.0" prefWidth="200.0" resizableOnDrag="true" resizeContent="true" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </JFXDrawer>
+   </left>
+</BorderPane>

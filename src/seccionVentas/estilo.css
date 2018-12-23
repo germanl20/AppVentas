@@ -1,0 +1,43 @@
+.tree-table-view .placeholder .label {  
+    -fx-font-size: 1.1em;  
+    -fx-font-weight: bold;    
+    -fx-text-fill: #F44336;
+    -fx-alignment: center;
+} 
+
+.tree-table-view {  
+        -fx-background-color: #fff;
+        -fx-background-radius: 5.0 5.0 5.0 5.0;  
+} 
+
+.tree-table-view .column-header{       
+            /* made transparent */  
+        -fx-size: 45.0px;  
+        -fx-min-height: 45.0px;    
+        -fx-cursor: hand;  
+}
+
+.tree-table-view .column-header .label { 
+        -fx-font-size: 1.083333em;  
+        -fx-font-weight: bold;    
+        -fx-text-fill: white;
+        -fx-alignment: center;  
+        -fx-padding: 5.0 5.0 5.0 5.0;  
+}
+
+.tree-table-view .column-header-background {  
+      -fx-background-radius: 5.0 5.0 0.0 0.0;  
+      -fx-background-color: #EF5350;
+}
+
+.tree-table-view .column-resize-line{
+    -fx-background-color: #EF5350;
+}
+
+.segunda-seccion{
+	-fx-background-radius: 0px 5px 5px 0px;
+}
+
+#jfx-text-field{
+	-fx-prompt-text-fill: #9E9E9E;
+}

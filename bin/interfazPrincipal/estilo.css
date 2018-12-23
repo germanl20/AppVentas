@@ -1,0 +1,22 @@
+.jfx-hamburger StackPane{
+	-fx-background-color:  white;
+}
+
+#hbox-logotipo{
+	-fx-background-radius: 0px 4px 4px 0px;
+}
+
+#barraDeBusqueda{
+	-fx-background-color: #F5F5F5;
+	-fx-prompt-text-fill: #727272;
+	-fx-background-radius: 7px;
+	-fx-text-fill: #616161
+}
+
+#jfx-button-bar{
+	-fx-background-radius: 100;
+}
+
+#jfx-button-bar:hover{
+	-fx-background-color: #F5F5F5;
+}

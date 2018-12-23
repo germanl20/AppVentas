@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.icons525.Icons525View?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: white;" stylesheets="@estilo.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER_LEFT" styleClass="hover-border">
+         <children>
+            <JFXButton alignment="BASELINE_LEFT" prefHeight="42.0" prefWidth="201.0" ripplerFill="#a4a4a4" text="VENTAS" textFill="#485460" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="Quicksand-Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <graphic>
+                  <FontAwesomeIconView fill="#f44336" glyphName="LIST_UL" size="1.8em" text="" wrappingWidth="26.600000381469727" />
+               </graphic>
+            </JFXButton>
+         </children>
+         <VBox.margin>
+            <Insets bottom="15.0" top="40.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" styleClass="hover-border">
+         <children>
+            <JFXButton alignment="BASELINE_LEFT" prefHeight="42.0" prefWidth="201.0" ripplerFill="#a4a4a4" text="STOCK" textFill="#485460" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="Quicksand-Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <graphic>
+                  <MaterialIconView fill="#f44336" glyphName="LOCAL_LIBRARY" size="2em" wrappingWidth="27.0" />
+               </graphic>
+            </JFXButton>
+         </children>
+         <VBox.margin>
+            <Insets bottom="15.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" styleClass="hover-border">
+         <children>
+            <JFXButton alignment="BASELINE_LEFT" prefHeight="42.0" prefWidth="201.0" ripplerFill="#a4a4a4" text="CALCULOS" textFill="#485460" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="Quicksand-Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <graphic>
+                  <Icons525View fill="#f44336" glyphName="SQUARE_CALC" size="1.8em" wrappingWidth="25.600000381469727" />
+               </graphic>
+            </JFXButton>
+         </children>
+         <VBox.margin>
+            <Insets bottom="15.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" styleClass="hover-border">
+         <children>
+            <JFXButton alignment="BASELINE_LEFT" prefHeight="42.0" prefWidth="201.0" ripplerFill="#a4a4a4" text="ESTADISTICAS" textFill="#485460" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="Quicksand-Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <graphic>
+                  <MaterialDesignIconView fill="#f44336" glyphName="TAG_FACES" size="1.8em" wrappingWidth="25.600000381469727" />
+               </graphic>
+            </JFXButton>
+         </children>
+         <VBox.margin>
+            <Insets bottom="15.0" />
+         </VBox.margin>
+      </HBox>
+      <VBox alignment="BOTTOM_LEFT" VBox.vgrow="ALWAYS">
+         <children>
+            <HBox alignment="CENTER_LEFT" styleClass="hover-border">
+               <children>
+                  <JFXButton alignment="BASELINE_LEFT" prefHeight="42.0" prefWidth="201.0" ripplerFill="#a4a4a4" text="CONFIGURACION" textFill="#485460" HBox.hgrow="ALWAYS">
+                     <graphic>
+                        <FontAwesomeIconView fill="#f44336" glyphName="COG" size="1.8em" wrappingWidth="24.514286041259766" />
+                     </graphic>
+                     <font>
+                        <Font name="Quicksand-Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="50.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>
