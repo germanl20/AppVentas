@@ -2,6 +2,7 @@ package interfazPrincipal.menuLateral;
 
 import com.jfoenix.controls.JFXButton;
 
+import application.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
@@ -24,7 +25,13 @@ public class ControladorMenuLateral {
     
     private JFXButton botonSeleccionado;
     
-    @FXML
+    private Main main;
+    
+    public void setMain(Main main) {
+		this.main = main;
+	}
+
+	@FXML
     private void initialize() {
     	this.botonSeleccionado = botonVentas;
     	botonSeleccionado.setId("boton-seleccionado");
@@ -38,26 +45,37 @@ public class ControladorMenuLateral {
     
     @FXML
     void clickCalculos(ActionEvent event) {
-    	seleccionarBoton((JFXButton)event.getSource());
+    	if(!botonSeleccionado.equals((JFXButton)event.getSource())) {
+    		seleccionarBoton((JFXButton)event.getSource());
+    	}
     }
 
     @FXML
     void clickConfiguracion(ActionEvent event) {
-    	seleccionarBoton((JFXButton)event.getSource());
+    	if(!botonSeleccionado.equals((JFXButton)event.getSource())) {
+    		seleccionarBoton((JFXButton)event.getSource());
+    	}
     }
 
     @FXML
     void clickEstadisticas(ActionEvent event) {
-    	seleccionarBoton((JFXButton)event.getSource());
+    	if(!botonSeleccionado.equals((JFXButton)event.getSource())) {
+    		seleccionarBoton((JFXButton)event.getSource());
+    	}
     }
 
     @FXML
     void clickStock(ActionEvent event) {
-    	seleccionarBoton((JFXButton)event.getSource());
+    	if(!botonSeleccionado.equals((JFXButton)event.getSource())) {
+    		seleccionarBoton((JFXButton)event.getSource());
+    	}
     }
 
     @FXML
     void clickVentas(ActionEvent event) {
-    	seleccionarBoton((JFXButton)event.getSource());
+    	if(!botonSeleccionado.equals((JFXButton)event.getSource())) {
+    		seleccionarBoton((JFXButton)event.getSource());
+        	main.cargarSeccionCentro("/seccionVentas/InterfazVentas.fxml");
+    	}
     }
 }

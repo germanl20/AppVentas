@@ -7,6 +7,7 @@ import com.jfoenix.controls.JFXHamburger;
 import com.jfoenix.transitions.hamburger.HamburgerNextArrowBasicTransition;
 
 import application.Main;
+import interfazPrincipal.menuLateral.ControladorMenuLateral;
 import javafx.animation.TranslateTransition;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -24,7 +25,6 @@ public class ControladorInterfazPrincipal {
     
     @FXML
     private void initialize() {
-    	inicializarMenuLateral();
     }
     
 	public Main getMain() {
@@ -35,9 +35,13 @@ public class ControladorInterfazPrincipal {
 		this.main = main;
 	}
 	
-	private void inicializarMenuLateral() {
+	public void inicializarMenuLateral() {
 		try {
-			VBox menuLateral = FXMLLoader.load(getClass().getResource("/interfazPrincipal/menuLateral/MenuLateral.fxml"));
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Main.class.getResource("/interfazPrincipal/menuLateral/MenuLateral.fxml"));
+			VBox menuLateral = (VBox)loader.load();
+			ControladorMenuLateral controladorMenu = loader.getController();
+			controladorMenu.setMain(this.main);
 			drawer.setSidePane(menuLateral);
 		} catch (IOException e) {
 			e.printStackTrace();

@@ -33,6 +33,7 @@ public class Main extends Application {
 			rootLayout = (BorderPane) loader.load();
 			ControladorInterfazPrincipal controlador = loader.getController();
 			controlador.setMain(this);
+			controlador.inicializarMenuLateral();
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);
 			primaryStage.show();
