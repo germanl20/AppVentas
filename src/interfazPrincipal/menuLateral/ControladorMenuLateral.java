@@ -2,11 +2,11 @@ package interfazPrincipal.menuLateral;
 
 import com.jfoenix.controls.JFXButton;
 
-import application.Main;
+import application.Controlador;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
-public class ControladorMenuLateral {
+public class ControladorMenuLateral extends Controlador{
 
     @FXML
     private JFXButton botonVentas;
@@ -24,12 +24,6 @@ public class ControladorMenuLateral {
     private JFXButton botonConfiguracion;
     
     private JFXButton botonSeleccionado;
-    
-    private Main main;
-    
-    public void setMain(Main main) {
-		this.main = main;
-	}
 
 	@FXML
     private void initialize() {
@@ -75,7 +69,7 @@ public class ControladorMenuLateral {
     void clickVentas(ActionEvent event) {
     	if(!botonSeleccionado.equals((JFXButton)event.getSource())) {
     		seleccionarBoton((JFXButton)event.getSource());
-        	main.cargarSeccionCentro("/seccionVentas/InterfazVentas.fxml");
+        	this.getMain().cargarSeccionCentro(this.getMain().getSeccionVentas());
     	}
     }
 }

@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="700.0" prefWidth="1300.0" stylesheets="@estilo.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="700.0" prefWidth="1300.0" stylesheets="@estilo.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seccionVentas.ControladorInterfazVentas">
    <top>
       <HBox alignment="CENTER_LEFT" prefHeight="90.0" prefWidth="1090.0" styleClass="hbox-barra-herramientas" BorderPane.alignment="CENTER">
          <children>
@@ -26,7 +26,7 @@
             </Text>
             <HBox alignment="CENTER_RIGHT" prefHeight="45.0" prefWidth="940.0" HBox.hgrow="ALWAYS">
                <children>
-                  <JFXTextField id="barraDeBusqueda" focusColor="#ffffff00" prefHeight="34.0" prefWidth="451.0" promptText="Buscar venta..." unFocusColor="#ffffff00">
+                  <JFXTextField id="barraDeBusqueda" fx:id="txtBuscador" focusColor="#ffffff00" prefHeight="34.0" prefWidth="451.0" promptText="Buscar venta..." unFocusColor="#ffffff00">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
@@ -40,7 +40,7 @@
                         <Font name="Quicksand-BoldItalic" size="13.0" />
                      </font>
                   </JFXTextField>
-                  <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="32.0" prefWidth="24.0" ripplerFill="#1976d200">
+                  <JFXButton fx:id="botonBuscar" contentDisplay="GRAPHIC_ONLY" prefHeight="32.0" prefWidth="24.0" ripplerFill="#1976d200">
                      <graphic>
                         <MaterialIconView fill="#727272" glyphName="SEARCH" size="2em">
                            <cursor>
@@ -58,7 +58,7 @@
                         <Insets left="5.0" right="5.0" />
                      </padding>
                   </JFXButton>
-                  <JFXButton disable="true" prefHeight="32.0" prefWidth="100.0" style="-fx-font-family: quicksand; -fx-font-weight: bolder; -fx-background-color: #1976D2; -fx-background-radius: 0; -fx-text-fill: white;" text="Ver Detalles">
+                  <JFXButton fx:id="botonDetalles" disable="true" prefHeight="32.0" prefWidth="100.0" style="-fx-font-family: quicksand; -fx-font-weight: bolder; -fx-background-color: #1976D2; -fx-background-radius: 0; -fx-text-fill: white;" text="Ver Detalles">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
@@ -86,7 +86,7 @@
    <center>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox alignment="CENTER" maxHeight="512.0" prefHeight="512.0" prefWidth="382.0" style="-fx-background-color: white; -fx-background-radius: 5;">
+            <VBox alignment="CENTER" maxHeight="512.0" minHeight="512.0" minWidth="360.0" prefHeight="512.0" prefWidth="382.0" style="-fx-background-color: white; -fx-background-radius: 5;">
                <HBox.margin>
                   <Insets bottom="8.0" left="8.0" right="8.0" top="40.0" />
                </HBox.margin>
@@ -102,7 +102,7 @@
                         <Insets bottom="30.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXTextField id="jfx-text-field" focusColor="#1976d2" labelFloat="true" prefWidth="323.0" promptText="Articulo vendido" unFocusColor="#d7d7d7">
+                  <JFXTextField id="jfx-text-field" fx:id="txtArticuloVendido" focusColor="#1976d2" labelFloat="true" prefWidth="323.0" promptText="Articulo vendido" unFocusColor="#d7d7d7">
                      <VBox.margin>
                         <Insets bottom="15.0" left="33.0" right="32.0" top="15.0" />
                      </VBox.margin>
@@ -110,7 +110,7 @@
                         <Font name="Quicksand-Bold" size="15.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField id="jfx-text-field" focusColor="#1976d2" labelFloat="true" prefWidth="323.0" promptText="Talle" unFocusColor="#d7d7d7">
+                  <JFXTextField id="jfx-text-field" fx:id="txtTalle" focusColor="#1976d2" labelFloat="true" prefWidth="323.0" promptText="Talle" unFocusColor="#d7d7d7">
                      <font>
                         <Font name="Quicksand-Bold" size="15.0" />
                      </font>
@@ -118,7 +118,7 @@
                         <Insets bottom="15.0" left="33.0" right="32.0" top="15.0" />
                      </VBox.margin>
                   </JFXTextField>
-                  <JFXTextField id="jfx-text-field" focusColor="#1976d2" labelFloat="true" prefWidth="323.0" promptText="Precio" unFocusColor="#d7d7d7">
+                  <JFXTextField id="jfx-text-field" fx:id="txtPrecio" focusColor="#1976d2" labelFloat="true" prefWidth="323.0" promptText="Precio" unFocusColor="#d7d7d7">
                      <font>
                         <Font name="Quicksand-Bold" size="15.0" />
                      </font>
@@ -126,7 +126,7 @@
                         <Insets bottom="15.0" left="33.0" right="32.0" top="15.0" />
                      </VBox.margin>
                   </JFXTextField>
-                  <JFXButton buttonType="RAISED" defaultButton="true" prefHeight="39.0" prefWidth="318.0" style="-fx-background-color: #1976D2;" text="AGREGAR VENTA" textFill="WHITE">
+                  <JFXButton fx:id="botonAgregarVenta" buttonType="RAISED" defaultButton="true" prefHeight="39.0" prefWidth="318.0" style="-fx-background-color: #1976D2;" text="AGREGAR VENTA" textFill="WHITE">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -137,7 +137,7 @@
                         <Insets top="15.0" />
                      </VBox.margin>
                   </JFXButton>
-                  <JFXButton defaultButton="true" disable="true" prefHeight="39.0" prefWidth="318.0" ripplerFill="#002f5b" styleClass="boton-eliminar" text="ELIMINAR VENTA" textFill="#1976d2">
+                  <JFXButton fx:id="botonEliminarVenta" defaultButton="true" disable="true" prefHeight="39.0" prefWidth="318.0" ripplerFill="#002f5b" styleClass="boton-eliminar" text="ELIMINAR VENTA" textFill="#1976d2">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -150,21 +150,21 @@
                   </JFXButton>
                </children>
             </VBox>
-            <JFXTreeTableView HBox.hgrow="ALWAYS">
+            <JFXTreeTableView fx:id="tablaDeVentas" HBox.hgrow="ALWAYS">
                <effect>
                   <DropShadow color="#bbbbbb" height="10.0" radius="4.5" spread="0.23" width="10.0" />
                </effect>
                <columns>
-                  <TreeTableColumn minWidth="326.0" prefWidth="326.0" text="Articulo" />
-                  <TreeTableColumn minWidth="150.0" prefWidth="150.0" text="Talle" />
-                  <TreeTableColumn minWidth="150.0" prefWidth="150.0" text="Precio" />
+                  <TreeTableColumn fx:id="columnaArticulo" minWidth="320.3333740234375" prefWidth="300.0" text="Articulo" />
+                  <TreeTableColumn fx:id="columnaTalle" minWidth="150.0" prefWidth="300.0" text="Talle" />
+                  <TreeTableColumn fx:id="columnaPrecio" minWidth="150.0" prefWidth="300.0" text="Precio" />
                </columns>
-               <columnResizePolicy>
-                  <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-               </columnResizePolicy>
                <HBox.margin>
                   <Insets bottom="8.0" left="8.0" right="8.0" top="40.0" />
                </HBox.margin>
+               <columnResizePolicy>
+                  <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
             </JFXTreeTableView>
          </children>
       </HBox>

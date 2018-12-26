@@ -6,6 +6,7 @@ import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
 import com.jfoenix.transitions.hamburger.HamburgerNextArrowBasicTransition;
 
+import application.Controlador;
 import application.Main;
 import interfazPrincipal.menuLateral.ControladorMenuLateral;
 import javafx.animation.TranslateTransition;
@@ -16,8 +17,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
-public class ControladorInterfazPrincipal {
-	private Main main;
+public class ControladorInterfazPrincipal extends Controlador{
     @FXML
     private JFXHamburger hamburger;
     @FXML
@@ -26,14 +26,6 @@ public class ControladorInterfazPrincipal {
     @FXML
     private void initialize() {
     }
-    
-	public Main getMain() {
-		return main;
-	}
-	
-	public void setMain(Main main) {
-		this.main = main;
-	}
 	
 	public void inicializarMenuLateral() {
 		try {
@@ -41,7 +33,7 @@ public class ControladorInterfazPrincipal {
 			loader.setLocation(Main.class.getResource("/interfazPrincipal/menuLateral/MenuLateral.fxml"));
 			VBox menuLateral = (VBox)loader.load();
 			ControladorMenuLateral controladorMenu = loader.getController();
-			controladorMenu.setMain(this.main);
+			controladorMenu.setMain(this.getMain());
 			drawer.setSidePane(menuLateral);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -53,13 +45,13 @@ public class ControladorInterfazPrincipal {
 				hamburgerTransicion.play();
 				if(drawer.isClosed()) {
 					drawer.open();
-					TranslateTransition t = new TranslateTransition(Duration.seconds(0.4), main.getRootLayout().getCenter());
+					TranslateTransition t = new TranslateTransition(Duration.seconds(0.4), this.getMain().getRootLayout().getCenter());
 					t.setToX(0);
 					t.play();
 				}
 				else {
 					drawer.close();
-					TranslateTransition t = new TranslateTransition(Duration.seconds(0.4), main.getRootLayout().getCenter());
+					TranslateTransition t = new TranslateTransition(Duration.seconds(0.4), this.getMain().getRootLayout().getCenter());
 					t.setToX(-100);
 					t.play();
 				}

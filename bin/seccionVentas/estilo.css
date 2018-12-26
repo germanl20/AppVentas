@@ -14,14 +14,38 @@
 
 .tree-table-view {  
         -fx-background-color: #fff;
-        -fx-background-radius: 5.0 5.0 5.0 5.0;  
-} 
+        -fx-background-radius: 5.0 5.0 5.0 5.0;
+}
 
-.tree-table-view .column-header{       
-            /* made transparent */  
-        -fx-size: 45.0px;  
-        -fx-min-height: 45.0px;    
-        -fx-cursor: hand;  
+.tree-table-row-cell{
+	-fx-border-color: #eaeaea;
+	-fx-border-width: 0 0.0 1 0;
+	-fx-border-radius: 3px;
+}
+
+.tree-table-row-cell:empty{
+	-fx-border-width: 0;
+}
+
+.tree-table-row-cell:filled:selected{
+	-fx-background-color: rgba(227, 242, 253,0.9);
+	-fx-background-radius: 3;
+	-fx-border-radius: 3;
+}
+
+.tree-table-view .table-column{
+	-fx-alignment: CENTER;
+}
+
+.tree-table-view .column-header, .tree-table-view .filler{       
+      /* made transparent */  
+     -fx-size: 45.0px;  
+     -fx-min-height: 45.0px;    
+     -fx-cursor: hand;
+     -fx-border-width: 0 0 1 0;
+     -fx-border-color: #0D47A1;
+     -fx-background-color: transparent; /*Para borrar la linea que separa las columnas */
+       
 }
 
 .tree-table-view .column-header .label { 
