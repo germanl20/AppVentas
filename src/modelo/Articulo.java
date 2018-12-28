@@ -2,26 +2,24 @@ package modelo;
 
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 
-import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Articulo extends RecursiveTreeObject<Articulo>{
 	private StringProperty nombre;
-	private DoubleProperty precioCosto;
-	private DoubleProperty precioVenta;
+	private StringProperty precioCosto;
+	private StringProperty precioVenta;
 	private StringProperty talle;
 	private IntegerProperty cantidad;
 	
 	public Articulo() {}
 	
-	public Articulo(String nombre, double precioCosto, double precioVenta, String talle, int cantidad) {
+	public Articulo(String nombre, String precioCosto, String precioVenta, String talle, int cantidad) {
 		this.nombre = new SimpleStringProperty(nombre);
-		this.precioCosto = new SimpleDoubleProperty(precioCosto);
-		this.precioVenta = new SimpleDoubleProperty(precioVenta);
+		this.precioCosto = new SimpleStringProperty(precioCosto);
+		this.precioVenta = new SimpleStringProperty(precioVenta);
 		this.talle = new SimpleStringProperty(talle);
 		this.cantidad = new SimpleIntegerProperty(cantidad);
 	}
@@ -30,11 +28,11 @@ public class Articulo extends RecursiveTreeObject<Articulo>{
 		this.nombre.set(nombre);
 	}
 	
-	public void setPrecioCosto(Double precioCosto) {
+	public void setPrecioCosto(String precioCosto) {
 		this.precioCosto.set(precioCosto);
 	}
 	
-	public void setPrecioVenta(Double precioVenta) {
+	public void setPrecioVenta(String precioVenta) {
 		this.precioVenta.set(precioVenta);
 	}
 	
@@ -50,11 +48,11 @@ public class Articulo extends RecursiveTreeObject<Articulo>{
 		return nombre;
 	}
 
-	public DoubleProperty getPrecioCosto() {
+	public StringProperty getPrecioCosto() {
 		return precioCosto;
 	}
 
-	public DoubleProperty getPrecioVenta() {
+	public StringProperty getPrecioVenta() {
 		return precioVenta;
 	}
 

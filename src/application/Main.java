@@ -1,6 +1,7 @@
 package application;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import interfazPrincipal.ControladorInterfazPrincipal;
 import javafx.application.Application;
@@ -15,15 +16,20 @@ import javafx.fxml.FXMLLoader;
 
 public class Main extends Application {
 	private BorderPane rootLayout;
-	private ObservableList<Articulo> articulos = FXCollections.observableArrayList();
+	private ObservableList<Articulo> articulosEnStock = FXCollections.observableArrayList();
 	private BorderPane seccionVentas;
+	private ArrayList<String> articulosSugeridos;
 	
+	public ArrayList<String> getArticulosSugeridos() {
+		return articulosSugeridos;
+	}
+
 	public BorderPane getSeccionVentas() {
 		return seccionVentas;
 	}
 
-	public ObservableList<Articulo> getArticulos() {
-		return articulos;
+	public ObservableList<Articulo> getArticulosEnStock() {
+		return articulosEnStock;
 	}
 
 	public BorderPane getRootLayout() {
@@ -71,14 +77,24 @@ public class Main extends Application {
 			ControladorInterfazVentas controlador = loader.getController();
 			controlador.setMain(this);
 			controlador.inicializarTabla();
+			controlador.inicializarSugeridos(articulosSugeridos);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 	
-	public void inicializarArticulos() {
-		articulos.add(new Articulo("Camisa", 150, 300, "S", 3));
-    	articulos.add(new Articulo("Jean", 220, 450, "38", 5));
+	public void inicializarArticulos() { //trae el stock desde LA BASE DE DATOS
+		articulosEnStock.add(new Articulo("camisa", "150", "300", "s", 3));
+		articulosEnStock.add(new Articulo("camisa", "150", "300", "m", 3));
+    	articulosEnStock.add(new Articulo("jean", "220", "450", "38", 5));
+    	inicializarSugeridos();
+	}
+	
+	public void inicializarSugeridos() { //inicializa los articulos sugeridos del stock
+		articulosSugeridos = new ArrayList<>();
+		for(Articulo articulo : articulosEnStock) {
+			articulosSugeridos.add(articulo.getNombre().get() + " - " + articulo.getTalle().get());
+		}
 	}
 	
 	public static void main(String[] args) {

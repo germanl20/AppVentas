@@ -15,5 +15,6 @@
 	<classpathentry kind="lib" path="C:/Users/PC/eclipse-workspace/AplicacionDeVentas/librerias/fontawesomefx-weathericons-2.0.10-5.jar"/>
 	<classpathentry kind="lib" path="librerias/fontawesomefx-commons-8.15.jar"/>
 	<classpathentry kind="lib" path="librerias/AnimateFX-1.2.0.jar"/>
+	<classpathentry kind="lib" path="librerias/controlsfx-8.40.14.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

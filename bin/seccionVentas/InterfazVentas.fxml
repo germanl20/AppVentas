@@ -76,7 +76,7 @@
             </HBox>
          </children>
          <BorderPane.margin>
-            <Insets left="8.0" right="8.0" top="40.0" />
+            <Insets left="8.0" right="8.0" top="30.0" />
          </BorderPane.margin>
       </HBox>
    </top>
@@ -86,7 +86,7 @@
    <center>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox alignment="CENTER" maxHeight="512.0" minHeight="512.0" minWidth="360.0" prefHeight="512.0" prefWidth="382.0" style="-fx-background-color: white; -fx-background-radius: 5;">
+            <VBox alignment="CENTER" maxHeight="520.0" minHeight="400.0" minWidth="360.0" prefHeight="520.0" prefWidth="382.0" style="-fx-background-color: white; -fx-background-radius: 5;">
                <HBox.margin>
                   <Insets bottom="8.0" left="8.0" right="8.0" top="40.0" />
                </HBox.margin>
