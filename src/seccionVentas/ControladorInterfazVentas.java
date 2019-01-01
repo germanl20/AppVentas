@@ -63,6 +63,8 @@ public class ControladorInterfazVentas extends Controlador{
     
     private ObservableList<Articulo> articulosVendidos = FXCollections.observableArrayList();
     
+    private ArrayList<String> articulosSugeridos;
+    
     public void inicializarTabla() {
     	articulosVendidos = this.getMain().getArticulosEnStock();
     	columnaArticulo.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<Articulo,String>, ObservableValue<String>>(){
@@ -94,16 +96,25 @@ public class ControladorInterfazVentas extends Controlador{
     	inicializarTxtArticuloVendido();
     }
     
-    public void inicializarSugeridos(ArrayList<String> articulosSugeridos) {
+    public void inicializarSugeridos() { //inicializa los articulos sugeridos del stock
+		articulosSugeridos = new ArrayList<>();
+		for(Articulo articulo : this.getMain().getArticulosEnStock()) {
+			articulosSugeridos.add(articulo.getNombre().get() + " - " + articulo.getTalle().get());
+		}
+		asignarSugeridos();
+		inicializarTxtArticuloVendido();
+	}
+    
+    private void asignarSugeridos() {
     	TextFields.bindAutoCompletion(txtArticuloVendido, articulosSugeridos);
     }
     
-    public void inicializarTxtArticuloVendido() {
+    private void inicializarTxtArticuloVendido() {
     	txtArticuloVendido.textProperty().addListener(new ChangeListener() {
 			@Override
 			public void changed(ObservableValue arg0, Object arg1, Object arg2) {
-				if(getMain().getArticulosSugeridos().contains(txtArticuloVendido.getText().toLowerCase())){
-		    		FilteredList<Articulo> articulo = getMain().getArticulosEnStock().filtered(art -> art.getNombre().get().equals(eliminarTalleDeNombre(txtArticuloVendido.getText()).toLowerCase()));
+				if(articulosSugeridos.contains(txtArticuloVendido.getText().toLowerCase())){
+		    		FilteredList<Articulo> articulo = getMain().getArticulosEnStock().filtered(art -> art.getNombre().get().equals(eliminarTalleDeNombre(txtArticuloVendido.getText()).toLowerCase()) && art.getTalle().get().equals(encontrarTalle(txtArticuloVendido.getText())));
 		    		txtArticuloVendido.setText(articulo.get(0).getNombre().get());
 		    		txtTalle.setText(articulo.get(0).getTalle().get().toUpperCase());
 		    		txtPrecio.setText(articulo.get(0).getPrecioVenta().get());
@@ -118,5 +129,25 @@ public class ControladorInterfazVentas extends Controlador{
     		articuloSinTalle += articulo.charAt(i);
     	}
     	return articuloSinTalle;
+    }
+    
+    private String encontrarTalle(String articulo) {
+    	String talle = "";
+    	for(int i = articulo.length()-1; articulo.charAt(i) != ' ' ; i--) {
+    		System.out.println("entro");
+    		talle += articulo.charAt(i);
+    		System.out.println(talle);
+    	}
+    	talle = invertirPalabra(talle);
+    	System.out.println(talle);
+    	return talle;
+    }
+    
+    private String invertirPalabra(String palabra) {
+    	String palabraInvertida = "";
+    	for(int i = palabra.length()-1; i >= 0; i--) {
+    		palabraInvertida += palabra.charAt(i);
+    	}
+    	return palabraInvertida;
     }
 }

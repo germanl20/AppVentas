@@ -18,11 +18,6 @@ public class Main extends Application {
 	private BorderPane rootLayout;
 	private ObservableList<Articulo> articulosEnStock = FXCollections.observableArrayList();
 	private BorderPane seccionVentas;
-	private ArrayList<String> articulosSugeridos;
-	
-	public ArrayList<String> getArticulosSugeridos() {
-		return articulosSugeridos;
-	}
 
 	public BorderPane getSeccionVentas() {
 		return seccionVentas;
@@ -77,7 +72,7 @@ public class Main extends Application {
 			ControladorInterfazVentas controlador = loader.getController();
 			controlador.setMain(this);
 			controlador.inicializarTabla();
-			controlador.inicializarSugeridos(articulosSugeridos);
+			controlador.inicializarSugeridos();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -85,16 +80,8 @@ public class Main extends Application {
 	
 	public void inicializarArticulos() { //trae el stock desde LA BASE DE DATOS
 		articulosEnStock.add(new Articulo("camisa", "150", "300", "s", 3));
-		articulosEnStock.add(new Articulo("camisa", "150", "300", "m", 3));
+		articulosEnStock.add(new Articulo("camisa", "150", "350", "m", 3));
     	articulosEnStock.add(new Articulo("jean", "220", "450", "38", 5));
-    	inicializarSugeridos();
-	}
-	
-	public void inicializarSugeridos() { //inicializa los articulos sugeridos del stock
-		articulosSugeridos = new ArrayList<>();
-		for(Articulo articulo : articulosEnStock) {
-			articulosSugeridos.add(articulo.getNombre().get() + " - " + articulo.getTalle().get());
-		}
 	}
 	
 	public static void main(String[] args) {
