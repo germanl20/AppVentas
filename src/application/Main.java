@@ -1,7 +1,6 @@
 package application;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import interfazPrincipal.ControladorInterfazPrincipal;
 import javafx.application.Application;
@@ -18,6 +17,11 @@ public class Main extends Application {
 	private BorderPane rootLayout;
 	private ObservableList<Articulo> articulosEnStock = FXCollections.observableArrayList();
 	private BorderPane seccionVentas;
+	private ControladorInterfazPrincipal controladorInterfazPrincipal;
+
+	public ControladorInterfazPrincipal getControladorInterfazPrincipal() {
+		return controladorInterfazPrincipal;
+	}
 
 	public BorderPane getSeccionVentas() {
 		return seccionVentas;
@@ -47,9 +51,9 @@ public class Main extends Application {
 			FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("/interfazPrincipal/InterfazPrincipal.fxml"));
 			rootLayout = (BorderPane) loader.load();
-			ControladorInterfazPrincipal controlador = loader.getController();
-			controlador.setMain(this);
-			controlador.inicializarMenuLateral();
+			controladorInterfazPrincipal = loader.getController();
+			controladorInterfazPrincipal.setMain(this);
+			controladorInterfazPrincipal.inicializarMenuLateral();
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);
 			primaryStage.show();

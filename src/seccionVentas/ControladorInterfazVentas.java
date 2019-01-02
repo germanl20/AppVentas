@@ -16,6 +16,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
@@ -24,7 +25,6 @@ import javafx.util.Callback;
 import modelo.Articulo;
 
 public class ControladorInterfazVentas extends Controlador{
-
     @FXML
     private JFXTextField txtBuscador;
 
@@ -65,8 +65,9 @@ public class ControladorInterfazVentas extends Controlador{
     
     private ArrayList<String> articulosSugeridos;
     
+    private Articulo articuloVendido;
+    
     public void inicializarTabla() {
-    	articulosVendidos = this.getMain().getArticulosEnStock();
     	columnaArticulo.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<Articulo,String>, ObservableValue<String>>(){
     		@Override
             public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<Articulo, String> param) {
@@ -118,6 +119,7 @@ public class ControladorInterfazVentas extends Controlador{
 		    		txtArticuloVendido.setText(articulo.get(0).getNombre().get());
 		    		txtTalle.setText(articulo.get(0).getTalle().get().toUpperCase());
 		    		txtPrecio.setText(articulo.get(0).getPrecioVenta().get());
+		    		articuloVendido = articulo.get(0);
 		    	}
 			}
         });
@@ -134,12 +136,9 @@ public class ControladorInterfazVentas extends Controlador{
     private String encontrarTalle(String articulo) {
     	String talle = "";
     	for(int i = articulo.length()-1; articulo.charAt(i) != ' ' ; i--) {
-    		System.out.println("entro");
     		talle += articulo.charAt(i);
-    		System.out.println(talle);
     	}
     	talle = invertirPalabra(talle);
-    	System.out.println(talle);
     	return talle;
     }
     
@@ -149,5 +148,16 @@ public class ControladorInterfazVentas extends Controlador{
     		palabraInvertida += palabra.charAt(i);
     	}
     	return palabraInvertida;
+    }
+    
+    /*----------------------- AGREGAR VERIFICACION DE AGREGAR VACIO -------------------------------*/
+    
+    @FXML
+    void agregarVenta(ActionEvent event) {
+    	articulosVendidos.add(articuloVendido);
+    	this.getMain().getControladorInterfazPrincipal().incrementarTotalVentas();
+    	this.txtArticuloVendido.clear();
+    	this.txtTalle.clear();
+    	this.txtPrecio.clear();
     }
 }

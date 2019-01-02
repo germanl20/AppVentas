@@ -118,7 +118,7 @@
                         <Insets bottom="15.0" left="33.0" right="32.0" top="15.0" />
                      </VBox.margin>
                   </JFXTextField>
-                  <JFXTextField id="jfx-text-field" fx:id="txtPrecio" focusColor="#1976d2" labelFloat="true" prefWidth="323.0" promptText="Precio" unFocusColor="#d7d7d7">
+                  <JFXTextField id="jfx-text-field" fx:id="txtPrecio" editable="false" focusColor="#1976d2" labelFloat="true" prefWidth="323.0" promptText="Precio" unFocusColor="#d7d7d7">
                      <font>
                         <Font name="Quicksand-Bold" size="15.0" />
                      </font>
@@ -126,7 +126,7 @@
                         <Insets bottom="15.0" left="33.0" right="32.0" top="15.0" />
                      </VBox.margin>
                   </JFXTextField>
-                  <JFXButton fx:id="botonAgregarVenta" buttonType="RAISED" defaultButton="true" prefHeight="39.0" prefWidth="318.0" style="-fx-background-color: #1976D2;" text="AGREGAR VENTA" textFill="WHITE">
+                  <JFXButton fx:id="botonAgregarVenta" buttonType="RAISED" defaultButton="true" onAction="#agregarVenta" prefHeight="39.0" prefWidth="318.0" style="-fx-background-color: #1976D2;" text="AGREGAR VENTA" textFill="WHITE">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>

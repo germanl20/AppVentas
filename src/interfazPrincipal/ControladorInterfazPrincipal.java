@@ -15,13 +15,18 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 public class ControladorInterfazPrincipal extends Controlador{
     @FXML
     private JFXHamburger hamburger;
+    
     @FXML
     private JFXDrawer drawer;
+    
+    @FXML
+    private Text txtTotalVentas;
     
     @FXML
     private void initialize() {
@@ -57,5 +62,11 @@ public class ControladorInterfazPrincipal extends Controlador{
 				}
 		});
 		drawer.open();
+	}
+	
+	public void incrementarTotalVentas() {
+		int nuevoMonto = Integer.parseInt(txtTotalVentas.getText());
+		nuevoMonto += 1;
+		txtTotalVentas.setText(Integer.toString(nuevoMonto));
 	}
 }

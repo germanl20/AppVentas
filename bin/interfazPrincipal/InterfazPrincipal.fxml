@@ -51,7 +51,7 @@
                               </Text>
                               <HBox alignment="CENTER" layoutX="146.0" prefHeight="40.0" prefWidth="106.0" style="-fx-background-color: #eeeeee;" styleClass="segunda-seccion">
                                  <children>
-                                    <Text fill="#727272" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                    <Text fx:id="txtTotalVentas" fill="#727272" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                                        <font>
                                           <Font name="Quicksand-Bold" size="24.0" />
                                        </font>
